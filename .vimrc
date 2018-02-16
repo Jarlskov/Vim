@@ -91,8 +91,10 @@ autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldma
 "Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
-" Get json syntax highlighting for free like this.
+
 autocmd BufNewFile,BufRead *.json set ft=javascript
+autocmd BufNewFile,BufRead *.ts set ft=javascript
+autocmd BufNewFile,BufRead *.ts setlocal foldmethod=indent
 autocmd BufRead,BufNewFile *.scss set filetype=scss.css
 
 inoremap <F1> <ESC>
